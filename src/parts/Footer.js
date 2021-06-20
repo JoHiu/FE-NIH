@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
         <div className="row">
           <div className="col text-center copyrights">
-            Copyright 2019 • All rights reserved • TravelKu
+            Copyright 2021 • All rights reserved • TravelKu
           </div>
         </div>
       </div>
