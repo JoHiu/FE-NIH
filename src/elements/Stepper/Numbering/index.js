@@ -1,36 +1,37 @@
-import React from "react";
+import React from 'react'
 
-import Fade from "react-reveal/Fade";
+import Fade from 'react-reveal/Fade'
+import propsTypes from 'prop-types'
 
-import propTypes from "prop-types";
+import './index.scss'
 
-import "./index.scss";
+export default function Numbering({ style, className, data, current}) {
 
-export default function Numbering({ style, className, data, current }) {
-  const KeysOfData = Object.keys(data);
-  return (
-    <Fade>
-      <ol className={["stepper", className].join(" ")} style={style}>
-        {KeysOfData.map((list, index) => {
-          let isActive = list === current ? "active" : "";
-          if (index + 1 === KeysOfData.length) {
-            isActive = "";
-            return null;
-          }
+    const KeysOfData = Object.keys(data);
 
-          return (
-            <li key={`list-${index}`} className={[isActive].join(" ")}>
-              {index + 1}
-            </li>
-          );
-        })}
-      </ol>
-    </Fade>
-  );
+    return (
+        <Fade>
+            <ol className = {["stepper", className].join(" ")} style = {style}>
+                {KeysOfData.map((list, index) => {
+                    let isActive = list === current ? "active" : "";
+                    if (index + 1 === KeysOfData.length) {
+                        isActive = "";
+                        return null;
+                    }
+
+                    return (
+                        <li key= {`list-${index}`} className = {[isActive].join(" ")}>
+                            {index + 1}
+                        </li>
+                    );
+                })}
+            </ol>
+        </Fade>
+    );
 }
 
-Numbering.propTypes = {
-  className: propTypes.string,
-  data: propTypes.object,
-  current: propTypes.string,
+Numbering.propsTypes = {
+    className: propsTypes.string,
+    data: propsTypes.object,
+    current: propsTypes.string
 };

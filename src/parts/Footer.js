@@ -1,7 +1,7 @@
 import React from "react";
-
 import Button from "elements/Button";
-import IconText from "parts/IconText";
+import IconText from "parts/iconText";
+
 export default function Footer() {
   return (
     <footer>
@@ -13,8 +13,9 @@ export default function Footer() {
               We kaboom your beauty holiday instantly and memorable.
             </p>
           </div>
+
           <div className="col-auto mr-5">
-            <h6 className="mt-2">For Beinners</h6>
+            <h6 className="mt-2">For Beginners</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
                 <Button type="link" href="/register">
@@ -33,11 +34,12 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-2 mr-5">
+
+          <div className="col-auto mr-5">
             <h6 className="mt-2">Explore Us</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <Button type="link" href="/careers">
+                <Button type="link" href="/career">
                   Our Careers
                 </Button>
               </li>
@@ -53,6 +55,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
           <div className="col-3">
             <h6 className="mt-2">Connect Us</h6>
             <ul className="list-group list-group-flush">
@@ -60,25 +63,26 @@ export default function Footer() {
                 <Button
                   isExternal
                   type="link"
-                  href="mailto:support@TravelKu.id"
+                  href="mailto:comfortzone@gmail.com"
                 >
-                  support@TravelKu.id
+                  travelku@gmail.com
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button isExternal type="link" href="tel:+622122081996">
-                  021 - 2208 - 1996
+                <Button isExternal type="link" href="tel:+628123456789">
+                  081-2345-6789
                 </Button>
               </li>
               <li className="list-group-item">
-                <span>TravelKu, Kemang, Jakarta</span>
+                <span>Tanjung Duren, Jakarta Barat</span>
               </li>
             </ul>
           </div>
         </div>
+
         <div className="row">
           <div className="col text-center copyrights">
-            Copyright 2021 • All rights reserved • TravelKu
+            Copyright 2021 ● All right reserved ● TravelKu
           </div>
         </div>
       </div>

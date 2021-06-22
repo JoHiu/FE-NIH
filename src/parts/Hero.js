@@ -32,63 +32,64 @@ export default function Hero(props) {
               We provide what you need to enjoy your holiday with family. Time
               to make another memorable moments.
             </p>
+
             <Button
               className="btn px-5"
               hasShadow
               isPrimary
               onClick={showMostPicked}
             >
-              Show Me Now
+              Show More
             </Button>
 
-            <div className="row" style={{ marginTop: 80 }}>
-              <div className="col-auto" style={{ marginRight: 35 }}>
+            <div className="row" style={{ marginTop: 50 }}>
+              <div className="col-auto text-green" style={{ marginRight: 35 }}>
                 <img
                   width="36"
                   height="36"
-                  src={`${process.env.PUBLIC_URL}/images/icon-traveler.svg`}
+                  src="images/icon-traveler.svg"
                   alt={`${props.data.travelers} Travelers`}
                 />
                 <h6 className="mt-3">
                   {formatNumber(props.data.travelers)}{" "}
-                  <span className="text-gray-500 font-weight-light">
+                  <span className="text-yellow font-weight-light">
                     travelers
                   </span>
                 </h6>
               </div>
-              <div className="col-auto" style={{ marginRight: 35 }}>
+
+              <div className="col-auto text-green" style={{ marginRight: 35 }}>
                 <img
                   width="36"
                   height="36"
-                  src={`${process.env.PUBLIC_URL}/images/icon-treasure.svg`}
-                  alt={`${props.data.treasures} Treasures`}
+                  src="images/icon-treasure.svg"
+                  alt={`${props.data.treasure} Treasures`}
                 />
                 <h6 className="mt-3">
                   {formatNumber(props.data.treasures)}{" "}
-                  <span className="text-gray-500 font-weight-light">
+                  <span className="text-yellow font-weight-light">
                     treasures
                   </span>
                 </h6>
               </div>
-              <div className="col-auto">
+
+              <div className="col-auto text-green">
                 <img
                   width="36"
                   height="36"
-                  src={`${process.env.PUBLIC_URL}/images/icon-cities.svg`}
+                  src="images/icon-cities.svg"
                   alt={`${props.data.cities} Cities`}
                 />
                 <h6 className="mt-3">
                   {formatNumber(props.data.cities)}{" "}
-                  <span className="text-gray-500 font-weight-light">
-                    cities
-                  </span>
+                  <span className="text-yellow font-weight-light">cities</span>
                 </h6>
               </div>
             </div>
           </div>
 
           <div className="col-6 pl-5">
-            <div style={{ width: 520, height: 410 }}>
+            <div style={{ width: 480, height: 370 }}>
               <img
                 src={ImageHero}
                 alt="Room with couches"
@@ -96,12 +97,13 @@ export default function Hero(props) {
                 className="img-fluid position-absolute"
                 style={{ margin: "-30px 0 0 -30px", zIndex: 1 }}
               />
+
               <img
                 src={ImageHero_}
                 alt="Room with couches frame"
                 id="heroku"
                 className="img-fluid position-absolute"
-                style={{ margin: "0 -15px -15px 0" }}
+                style={{ margin: "0 -15spx -15px 0" }}
               />
             </div>
           </div>

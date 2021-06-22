@@ -19,14 +19,12 @@ class DetailsPage extends Component {
     window.scrollTo(0, 0);
 
     if (!this.props.page[this.props.match.params.id])
-      this.props
-        .fetchPage(
-          `/detail-page/${this.props.match.params.id}`,
-          this.props.match.params.id
-        )
-        .then((response) => {
-          document.title = `TravelKu | ${response.title}`;
-        });
+      this.props.fetchPage(
+        `/detail-page/${this.props.match.params.id}`,
+        this.props.match.params.id
+      );
+
+    document.title = "TravelKu | DetailsPage";
   }
 
   render() {

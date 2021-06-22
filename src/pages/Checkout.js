@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+
+import Header from "parts/Header";
 import Fade from "react-reveal/Fade";
 import { connect } from "react-redux";
 
-import Header from "parts/Header";
 import Button from "elements/Button";
 import Stepper, {
   Numbering,
@@ -47,7 +48,6 @@ class Checkout extends Component {
   _Submit = (nextStep) => {
     const { data } = this.state;
     const { checkout } = this.props;
-
     const payload = new FormData();
     payload.append("firstName", data.firstName);
     payload.append("lastName", data.lastName);
@@ -71,6 +71,7 @@ class Checkout extends Component {
     const { data } = this.state;
     const { checkout, page } = this.props;
     console.log(page, data);
+
     if (!checkout)
       return (
         <div className="container">
@@ -79,13 +80,15 @@ class Checkout extends Component {
             style={{ height: "100vh" }}
           >
             <div className="col-3">
-              Pilih kamar dulu
+              Pilih Kamar Dulu
               <div>
                 <Button
                   className="btn mt-5"
                   type="button"
                   onClick={() => this.props.history.goBack()}
                   isLight
+                  hasShadow
+                  isPrimary
                 >
                   Back
                 </Button>
@@ -108,9 +111,10 @@ class Checkout extends Component {
           />
         ),
       },
+
       payment: {
         title: "Payment",
-        description: "Kindly follow the instructions below",
+        description: "Kindly follow the instruction below",
         content: (
           <Payment
             data={data}
@@ -120,6 +124,7 @@ class Checkout extends Component {
           />
         ),
       },
+
       completed: {
         title: "Yay! Completed",
         description: null,
@@ -131,7 +136,7 @@ class Checkout extends Component {
       <>
         <Header isCentered />
 
-        <Stepper steps={steps} initialStep="payment">
+        <Stepper steps={steps}>
           {(prevStep, nextStep, CurrentStep, steps) => (
             <>
               <Numbering
@@ -141,7 +146,6 @@ class Checkout extends Component {
               />
 
               <Meta data={steps} current={CurrentStep} />
-
               <MainContent data={steps} current={CurrentStep} />
 
               {CurrentStep === "bookingInformation" && (
@@ -163,6 +167,7 @@ class Checkout extends Component {
                         </Button>
                       </Fade>
                     )}
+
                   <Button
                     className="btn"
                     type="link"
@@ -193,6 +198,7 @@ class Checkout extends Component {
                         </Button>
                       </Fade>
                     )}
+
                   <Button
                     className="btn"
                     type="button"

@@ -2,7 +2,6 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 
 import TestimonyAccent from "assets/images/testimonial-landingpages-frame.jpg";
-
 import Star from "elements/Star";
 import Button from "elements/Button";
 
@@ -22,6 +21,7 @@ export default function Testimony({ data }) {
                 className="position-absolute"
                 style={{ zIndex: 1 }}
               />
+
               <img
                 src={TestimonyAccent}
                 alt="Testimonial frame"
@@ -30,13 +30,18 @@ export default function Testimony({ data }) {
               />
             </div>
           </div>
-          <div className="col">
-            <h4 style={{ marginBottom: 40 }}>{data.name}</h4>
-            <Star value={data.rate} width={20} height={20} spacing={4} />
-            <h5 className="h2 font-weight-light line-height-2 my-3">
+
+          <div className="col text-green">
+            <h4 className="font-weight-bold" style={{ marginBottom: 40 }}>
+              {data.name}
+            </h4>
+
+            <Star value={data.rate} width={35} height={35} spacing={4} />
+            <h5 className="h2 font-weight-light line-height-2 my-3 text-green">
               {data.content}
             </h5>
-            <span className="text-gray-500">
+
+            <span className="text-yellow">
               {data.familyName}, {data.familyOccupation}
             </span>
 
@@ -49,7 +54,7 @@ export default function Testimony({ data }) {
                 type="link"
                 href={`/testimonial/${data._id}`}
               >
-                Read Their Story
+                Read Story
               </Button>
             </div>
           </div>
